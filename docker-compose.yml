@@ -1,0 +1,15 @@
+version: '2'
+services:
+  php:
+    build: ./php
+    ports:
+      - '80:80'
+    volumes:
+      - /var/www/html:/var/www/html
+    links:
+      - mysql
+  mysql:
+    env_file: .env
+    build: ./mysql
+    volumes:
+      - /db:/var/lib/mysql
