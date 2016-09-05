@@ -7,8 +7,8 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - $PWD/mysql/conf.d:/etc/mysql/conf.d
-      - lamp-db-storage:/var/lib/mysql
       - $PWD/mysql/initdb.d:/docker-entrypoint-initdb.d
+      - db-storage:/var/lib/mysql
       - $PWD/mysql/log:/var/log/mysql
   php:
     build: ./php
@@ -28,5 +28,5 @@ services:
       - $PWD/php/log:/var/log/apache2
       - $PWD/php/conf:/usr/local/etc/php
 volumes:
-  lamp-db-storage:
+  db-storage:
     driver: local
