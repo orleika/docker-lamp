@@ -18,5 +18,5 @@ before_install:
 script:
  - docker-compose build
  - docker-compose up -d
- - sleep 5
+ - count=0; until docker logs dockerlamp_mysql_1 | grep "Ready for start up." &> /dev/null || (( count++ > 12 )); do echo "Waiting $((5*$count))sec"; sleep 5; done
  - ./test.sh
