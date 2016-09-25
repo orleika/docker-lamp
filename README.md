@@ -13,3 +13,7 @@ Implementation LAMP with Docker
 
 ## Environment
 Rename `.env.sample` to `.env` and configure `MYSQL_ROOT_PASSWORD`, `MYSQL_USER`, `MYSQL_PASSWORD`
+
+## Feture Works
+- Support secure Apache configuration
+- Support secure connection under https with letsencrypt
