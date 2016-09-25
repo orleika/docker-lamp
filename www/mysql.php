@@ -1,6 +1,6 @@
 <?php
 
-$dsn = 'mysql:host=' . $_ENV['DB_HOST'] . ';dbname=app;charset=utf8';
+$dsn = "mysql:host={$_ENV['DB_HOST']};dbname={$_ENV['MYSQL_DATABASE']};charset=utf8";
 $user = $_ENV['MYSQL_USER'];
 $password = $_ENV['MYSQL_PASSWORD'];
 
